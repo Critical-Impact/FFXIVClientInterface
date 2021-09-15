@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup Label="Target">
         <PlatformTarget>AnyCPU</PlatformTarget>
-        <TargetFramework>net472</TargetFramework>
+        <TargetFramework>net5.0-windows</TargetFramework>
         <LangVersion>preview</LangVersion>
         <Platforms>AnyCPU</Platforms>
         <Configurations>Debug;Release</Configurations>
@@ -26,9 +26,10 @@
         <AssemblyName>FFXIVClientInterface</AssemblyName>
     </PropertyGroup>
     <ItemGroup>
-        <ProjectReference Include="..\lib\FFXIVClientStructs\FFXIVClientStructs.csproj" Private="true" />
-    </ItemGroup>
-    <ItemGroup>
+        <Reference Include="FFXIVClientStructs">
+            <HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\dev\FFXIVClientStructs.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
         <Reference Include="Dalamud">
             <Private>false</Private>
             <HintPath>$(APPDATA)\XIVLauncher\addon\Hooks\dev\Dalamud.dll</HintPath>
